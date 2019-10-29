@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://Jake123:Jake123@capstone-dgwak.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://Jake123:Jake123@capstone-dgwak.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "secretToken"
 }
