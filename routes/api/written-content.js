@@ -34,13 +34,67 @@ router.post(
         content: req.body.content
       });
 
-      const post = await newPost.save();
-      res.json(post);
+      const writtenContent = await newPost.save();
+      res.json(writtenContent);
     } catch (err) {
       console.error(err.message);
       res.status(500).json('Server Error');
     }
   }
 );
+
+// GET api/posts | get all posts | private
+router.get('/', auth, async (req, res) => {
+  try {
+    const writtenContent = await WrittenContent.find().sort({ date: -1 });
+    res.json(writtenContent);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json('Server Error');
+  }
+});
+
+// GET api/posts/:id | get single post | private
+router.get('/:id', auth, async (req, res) => {
+  try {
+    const writtenContent = await WrittenContent.findById(req.params.id);
+
+    if (!writtenContent) {
+      return res.status(404).json({ msg: 'Post not found' });
+    }
+
+    res.json(writtenContent);
+  } catch (err) {
+    console.error(err.message);
+    if (err.kind === 'ObjectId') {
+      return res.status(404).json({ msg: 'Post not found' });
+    }
+    res.status(500).json('Server Error');
+  }
+});
+
+// DEL api/post/:id |
+router.delete('/:id', auth, async (req, res) => {
+  try {
+    const writtenContent = await WrittenContent.findById(req.params.id);
+
+    if (!writtenContent) {
+      return res.status(404).json({ msg: 'Post not found' });
+    }
+    // check if user wrote the piece of content
+    if (writtenContent.user.toString() !== req.user.id) {
+      return res.status(401).json("You cannot delete other users' posts");
+    }
+    await writtenContent.remove();
+
+    res.json({ msg: 'Post Deleted' });
+  } catch (err) {
+    console.error(err.message);
+    if (err.kind === 'ObjectId') {
+      return res.status(404).json({ msg: 'Post not found' });
+    }
+    res.status(500).json('Server Error');
+  }
+});
 
 module.exports = router;
