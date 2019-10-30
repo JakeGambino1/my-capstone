@@ -7,7 +7,6 @@ const WrittenContent = require('../../models/WrittenContent');
 const Profile = require('../../models/Profile');
 
 // POST api/written-content/
-
 router.post(
   '/',
   [
@@ -93,6 +92,48 @@ router.delete('/:id', auth, async (req, res) => {
     if (err.kind === 'ObjectId') {
       return res.status(404).json({ msg: 'Post not found' });
     }
+    res.status(500).json('Server Error');
+  }
+});
+
+// PUT api/posts/like/:id | like a post
+router.put('/like/:id', auth, async (req, res) => {
+  try {
+    const writtenContent = await WrittenContent.findById(req.params.id);
+
+    if (
+      writtenContent.likes.filter(like => like.user.toString() === req.user.id)
+        .length > 0
+    ) {
+      return res.status(400).json({ msg: 'Post already liked' });
+    }
+    writtenContent.likes.unshift({ user: req.user.id });
+    await writtenContent.save();
+
+    res.json(writtenContent.likes);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json('Server Error');
+  }
+});
+
+// PUT api/posts/like/:id | unlike a post
+router.put('/like/:id', auth, async (req, res) => {
+  try {
+    const writtenContent = await WrittenContent.findById(req.params.id);
+
+    if (
+      writtenContent.likes.filter(like => like.user.toString() === req.user.id)
+        .length > 0
+    ) {
+      return res.status(400).json({ msg: 'Post already liked' });
+    }
+    writtenContent.likes.unshift({ user: req.user.id });
+    await writtenContent.save();
+
+    res.json(writtenContent.likes);
+  } catch (err) {
+    console.error(err.message);
     res.status(500).json('Server Error');
   }
 });
