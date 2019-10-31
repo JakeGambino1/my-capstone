@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="nav-wrapper">
-        <Link to="#" class="brand-logo">
+        <Link to="#" className="brand-logo">
           Logo
         </Link>
         <ul id="nav-mobile" className="right hide-on-med-and-down">

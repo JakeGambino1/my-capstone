@@ -5,6 +5,7 @@ import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+import WrittenContentContainer from './components/written-content/WrittenContentContainer';
 
 const App = () => (
   <Router>
@@ -16,6 +17,7 @@ const App = () => (
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
         </Switch>
+        <WrittenContentContainer />
       </section>
     </Fragment>
   </Router>

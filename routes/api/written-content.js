@@ -43,7 +43,7 @@ router.post(
 );
 
 // GET api/posts | get all posts | private
-router.get('/', auth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const writtenContent = await WrittenContent.find().sort({ date: -1 });
     res.json(writtenContent);
