@@ -25,22 +25,6 @@ const WrittenContentSchema = new mongoose.Schema({
       }
     }
   ],
-  comments: [
-    {
-      user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'users'
-      },
-      text: {
-        type: String,
-        required: true
-      },
-      date: {
-        type: Date,
-        default: Date.now
-      }
-    }
-  ],
   date: {
     type: String,
     default: Date.now

@@ -6,6 +6,7 @@ import Landing from './components/layout/Landing';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import WrittenContentContainer from './components/written-content/WrittenContentContainer';
+import CreatePost from './components/posts/CreatePost';
 
 const App = () => (
   <Router>
@@ -16,6 +17,7 @@ const App = () => (
         <Switch>
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/createpost" component={CreatePost} />
         </Switch>
         <WrittenContentContainer />
       </section>
