@@ -2,6 +2,23 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class AddActionListItem extends Component {
+  state = {
+    title: ''
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    axios
+      .post('api/action-list/', {
+        title: e.target.title.value,
+        isComplete: false
+      })
+      .then(res => {
+        console.log(res);
+        this.setState({ title: res.title });
+      });
+  };
+
   render() {
     return (
       <div className="row">

@@ -2,10 +2,16 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class DeleteActionListItem extends Component {
+  handleDelete() {
+    axios.delete(`/api/action-list/${this.props.actionListItemId}`);
+  }
+
   render() {
     return (
       <div>
-        <button class="btn">Delete</button>
+        <button onClick={this.handleDelete} className="btn">
+          Delete
+        </button>
       </div>
     );
   }
