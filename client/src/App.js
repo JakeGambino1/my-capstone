@@ -6,7 +6,7 @@ import Landing from './components/layout/Landing';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import WrittenContentContainer from './components/written-content/WrittenContentContainer';
-import CreatePost from './components/posts/CreatePost';
+import CreateWrittenContent from './components/written-content/CreateWrittenContent';
 import ActionList from './components/action-list/ActionList';
 
 const App = () => (
@@ -18,7 +18,7 @@ const App = () => (
         <Switch>
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/createpost" component={CreatePost} />
+          <Route exact path="/createpost" component={CreateWrittenContent} />
           <Route exact path="/actionlist" component={ActionList} />
         </Switch>
         <WrittenContentContainer />
