@@ -3,15 +3,8 @@ import axios from 'axios';
 import DeleteActionListItem from './DeleteActionListItem';
 
 class ActionListItem extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  componentDidMount() {
-    console.log(this.props.actionListItems);
-  }
-
   render() {
+    console.log(this.props.actionListItems);
     return this.props.actionListItems.map((actionItem, i) => (
       <tr>
         <td>
@@ -20,9 +13,9 @@ class ActionListItem extends Component {
             <span></span>
           </label>
         </td>
-        <td key={i}>{actionItem.title}</td>
+        <td key={i + 'i'}>{actionItem.title}</td>
         <td>
-          <DeleteActionListItem key={i} actionListItemId={actionItem.id} />
+          <DeleteActionListItem key={i} actionListItemId={actionItem._id} />
         </td>
       </tr>
     ));

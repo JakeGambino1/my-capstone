@@ -12,7 +12,6 @@ class ActionList extends Component {
     axios
       .get('api/action-list/')
       .then(res => this.setState({ actionListItems: res.data }));
-    console.log(this.state);
   }
 
   deleteActionListItem = id => {
