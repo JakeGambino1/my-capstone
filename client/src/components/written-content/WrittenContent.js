@@ -11,7 +11,7 @@ class WrittenContent extends Component {
         <div className="written-content-content">
           <p>{content.content}</p>
         </div>
-        <button>Like</button>
+        <button className="btn">Like</button>
       </article>
     ));
   }

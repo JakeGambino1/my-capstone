@@ -18,6 +18,9 @@ const Navbar = () => {
           <li>
             <Link to="/createpost">Create Post</Link>
           </li>
+          <li>
+            <Link to="/actionlist">Action List</Link>
+          </li>
         </ul>
       </div>
     </nav>

@@ -5,7 +5,7 @@ const auth = require('../../middleware/auth');
 const User = require('../../models/User');
 const ActionList = require('../../models/ActionList');
 
-// POST api/written-content/
+// POST api/action-list/
 router.post(
   '/',
   [
