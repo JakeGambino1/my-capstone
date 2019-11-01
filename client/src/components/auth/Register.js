@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import M from 'materialize-css';
+import axios from 'axios';
 
 class Register extends Component {
   constructor(props) {
     super(props);
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    // this.state = {
-    //   firstName: '',
-    //   lastName: '',
-    //   email: '',
-    //   password: '',
-    //   password2: ''
-    // };
+    this.state = {
+      name: '',
+      email: '',
+      password: '',
+      password2: ''
+    };
   }
 
   componentDidMount() {
@@ -21,20 +20,22 @@ class Register extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.setState({ [e.target.name]: e.target.value });
 
-    console.log(e.target.firstName.value);
-    console.log(e.target.lastName.value);
-    console.log(e.target.email.value);
-    console.log(e.target.password.value);
-    console.log(e.target.password2.value);
+    // console.log(e.target.firstName.value);
+    // console.log(e.target.lastName.value);
+    // console.log(e.target.email.value);
+    // console.log(e.target.password.value);
+    // console.log(e.target.password2.value);
 
-    // this.setState({
-    //   firstName: e.firstName,
-    //   lastName: e.lastName,
-    //   email: e.email,
-    //   password: e.password
-    // });
+    if (e.target.password.value !== e.target.password2.value) {
+      return console.log('Passwords much match');
+    }
+
+    axios.post('api/users/', {
+      name: e.target.firstName.value + ' ' + e.target.lastName.value,
+      email: e.target.email.value,
+      password: e.target.password.value
+    });
   }
 
   render() {

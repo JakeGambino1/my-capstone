@@ -10,7 +10,6 @@ const Profile = require('../../models/Profile');
 router.post(
   '/',
   [
-    auth,
     check('title', 'You must have a title.')
       .not()
       .isEmpty(),

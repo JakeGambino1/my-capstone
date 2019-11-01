@@ -1,8 +1,24 @@
 import React, { Component } from 'react';
+import axios from 'react';
 
 class CreatePost extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      title: '',
+      content: ''
+    };
+  }
+
   handleSubmit = e => {
     e.preventDefault();
+
+    axios.post('api/written-content/').then(res => {
+      const data = res.data;
+      console.log(data);
+    });
+
     console.log('test');
   };
 
