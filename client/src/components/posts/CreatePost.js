@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'react';
+import axios from 'axios';
 
 class CreatePost extends Component {
   constructor(props) {
@@ -13,13 +13,12 @@ class CreatePost extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-
-    axios.post('api/written-content/').then(res => {
-      const data = res.data;
-      console.log(data);
+    console.log(e.target.title.value);
+    console.log(e.target.content.value);
+    axios.post('api/written-content/', {
+      title: e.target.title.value,
+      content: e.target.content.value
     });
-
-    console.log('test');
   };
 
   render() {
@@ -44,7 +43,9 @@ class CreatePost extends Component {
           ></textarea>
           <label htmlFor="content-field">Content Body</label>
         </div>
-        <button className="btn">Create Post</button>
+        <button className="btn" type="submit">
+          Create Post
+        </button>
       </form>
     );
   }

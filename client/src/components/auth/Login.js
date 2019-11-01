@@ -30,11 +30,10 @@ class Login extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    // axios.post('api/users/', {
-    //   name: e.target.firstName.value + ' ' + e.target.lastName.value,
-    //   email: e.target.email.value,
-    //   password: e.target.password.value
-    // });
+    axios.post('api/users/', {
+      email: this.state.email,
+      password: this.state.password
+    });
     console.log(`${this.state.email} ${this.state.password}`);
   };
 
