@@ -9,11 +9,15 @@ class ActionListItem extends Component {
       <tr>
         <td>
           <label>
-            <input onChange={this.props.markComplete} type="checkbox" />
+            <input
+              key={'input' + i}
+              onChange={this.props.markComplete}
+              type="checkbox"
+            />
             <span></span>
           </label>
         </td>
-        <td key={i + 'i'}>{actionItem.title}</td>
+        <td key={i}>{actionItem.title}</td>
         <td>
           <DeleteActionListItem key={i} actionListItemId={actionItem._id} />
         </td>

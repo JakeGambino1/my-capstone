@@ -6,7 +6,6 @@ class DeleteActionListItem extends Component {
     console.log(e.target.name);
     axios.delete('/api/action-list/' + e.target.name);
   }
-
   render() {
     const data = this.props.actionListItemId;
     console.log(data);

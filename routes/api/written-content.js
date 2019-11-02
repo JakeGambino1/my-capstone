@@ -96,7 +96,7 @@ router.delete('/:id', auth, async (req, res) => {
 });
 
 // PUT api/posts/like/:id | like a post
-router.put('/like/:id', auth, async (req, res) => {
+router.put('/like/:id', async (req, res) => {
   try {
     const writtenContent = await WrittenContent.findById(req.params.id);
 
@@ -116,8 +116,8 @@ router.put('/like/:id', auth, async (req, res) => {
   }
 });
 
-// PUT api/posts/like/:id | unlike a post
-router.put('/unlike/:id', auth, async (req, res) => {
+// PUT api/posts/unlike/:id | unlike a post
+router.put('/unlike/:id', async (req, res) => {
   try {
     const writtenContent = await WrittenContent.findById(req.params.id);
 
