@@ -21,6 +21,9 @@ const Navbar = () => {
           <li>
             <Link to="/actionlist">Action List</Link>
           </li>
+          <li>
+            <Link to="/createprofile">Create Profile</Link>
+          </li>
         </ul>
       </div>
     </nav>

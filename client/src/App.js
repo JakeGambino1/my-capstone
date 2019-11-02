@@ -8,6 +8,7 @@ import Register from './components/auth/Register';
 import WrittenContentContainer from './components/written-content/WrittenContentContainer';
 import CreateWrittenContent from './components/written-content/CreateWrittenContent';
 import ActionList from './components/action-list/ActionList';
+import CreateProfile from './components/profile/CreateProfile';
 
 const App = () => (
   <Router>
@@ -20,6 +21,7 @@ const App = () => (
           <Route exact path="/login" component={Login} />
           <Route exact path="/createpost" component={CreateWrittenContent} />
           <Route exact path="/actionlist" component={ActionList} />
+          <Route exact path="/createprofile" component={CreateProfile} />
         </Switch>
         <WrittenContentContainer />
       </section>
