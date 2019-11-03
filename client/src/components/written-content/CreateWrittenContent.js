@@ -16,11 +16,15 @@ class CreatePost extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    axios.post('api/written-content/', {
-      user: UserContext.id,
-      title: e.target.title.value,
-      content: e.target.content.value
-    });
+    axios
+      .post('api/written-content/', {
+        user: this.context.id,
+        title: e.target.title.value,
+        content: e.target.content.value
+      })
+      .then(res => {
+        console.log(res);
+      });
   };
 
   render() {

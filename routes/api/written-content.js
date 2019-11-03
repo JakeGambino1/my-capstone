@@ -4,7 +4,6 @@ const { check, validationResult } = require('express-validator');
 const auth = require('../../middleware/auth');
 const User = require('../../models/User');
 const WrittenContent = require('../../models/WrittenContent');
-const Profile = require('../../models/Profile');
 
 // POST api/written-content/
 router.post(
@@ -25,9 +24,8 @@ router.post(
 
     try {
       const user = await User.findById(req.user.id).select('-password');
-
       const newPost = new WrittenContent({
-        user: req.user.id,
+        user: user.id,
         title: req.body.title,
         content: req.body.content
       });

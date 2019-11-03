@@ -44,27 +44,20 @@ class Login extends Component {
         const decoded = jwt_decode(res.data.token);
         axios.get('api/profile/user/' + decoded.user.id).then(res => {
           data = res.data;
-          console.log(data);
+          let newInterests = [];
+          data.interests.forEach(interest => {
+            newInterests.push(interest);
+          });
           updateState(
             data.user._id,
             data.user.name,
-            [res.interests],
+            newInterests,
             data.user.email,
             data.user.avatar,
             data.isMentor,
             data.social.youtube,
             data.social.linkedin
           );
-          // UserContext.state = {
-          //   id: data.user._id,
-          //   name: data.user.name,
-          //   interests: [res.interests],
-          //   email: data.user.email,
-          //   avatar: data.user.avatar,
-          //   isMentor: data.isMentor,
-          //   youtube: data.social.youtube,
-          //   linkedin: data.social.linkedin
-          // };
         });
       });
   };

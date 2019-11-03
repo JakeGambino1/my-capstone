@@ -61,7 +61,7 @@ class CreateProfile extends Component {
                 />
                 <label htmlFor="interests">Interests</label>
                 <span
-                  class="helper-text"
+                  className="helper-text"
                   data-error="wrong"
                   data-success="right"
                 >
