@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import DeleteActionListItem from './DeleteActionListItem';
 
 class ActionListItem extends Component {

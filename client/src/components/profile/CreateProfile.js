@@ -60,6 +60,13 @@ class CreateProfile extends Component {
                   className="validate"
                 />
                 <label htmlFor="interests">Interests</label>
+                <span
+                  class="helper-text"
+                  data-error="wrong"
+                  data-success="right"
+                >
+                  Separate interests with a comma
+                </span>
               </div>
             </div>
             <div className="row">

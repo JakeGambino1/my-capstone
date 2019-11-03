@@ -4,7 +4,6 @@ import axios from 'axios';
 class WrittenContent extends Component {
   upvote(e) {
     // Need an If statement where If the user already liked that post, then it unlikes it
-    console.log(e.target.name);
     axios.put('/api/posts/like/' + e.target.name);
   }
 

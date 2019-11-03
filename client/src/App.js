@@ -9,6 +9,8 @@ import WrittenContentContainer from './components/written-content/WrittenContent
 import CreateWrittenContent from './components/written-content/CreateWrittenContent';
 import ActionList from './components/action-list/ActionList';
 import CreateProfile from './components/profile/CreateProfile';
+import Profile from './components/profile/Profile';
+import { UserProvider } from './components/context/UserContext';
 
 const App = () => (
   <Router>
@@ -22,6 +24,9 @@ const App = () => (
           <Route exact path="/createpost" component={CreateWrittenContent} />
           <Route exact path="/actionlist" component={ActionList} />
           <Route exact path="/createprofile" component={CreateProfile} />
+          <UserProvider>
+            <Route exact path="/profile" component={Profile} />
+          </UserProvider>
         </Switch>
         <WrittenContentContainer />
       </section>
