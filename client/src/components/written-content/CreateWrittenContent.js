@@ -3,6 +3,7 @@ import axios from 'axios';
 import { UserContext } from '../context/UserContext';
 
 class CreatePost extends Component {
+  static contextType = UserContext;
   constructor(props) {
     super(props);
 
@@ -15,8 +16,6 @@ class CreatePost extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(e.target.title.value);
-    console.log(e.target.content.value);
     axios.post('api/written-content/', {
       user: UserContext.id,
       title: e.target.title.value,

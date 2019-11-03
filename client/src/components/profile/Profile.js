@@ -11,7 +11,10 @@ const Profile = () => {
         <div className="col m4">
           <div className="profile center">
             <div className="profile-img">
-              <img className="circle responsive-img" src={value} alt="" />
+              <img
+                className="circle responsive-img"
+                src={`https:${value.avatar}`}
+              />
             </div>
             <div className="profile-name">{value.name}</div>
             <div className="profile-interest">
