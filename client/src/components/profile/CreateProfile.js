@@ -23,8 +23,8 @@ class CreateProfile extends Component {
     e.preventDefault();
 
     axios.post('api/profile/', {
-      interests: e.target.email.value,
-      bio: e.target.password.value,
+      interests: e.target.interests.value,
+      bio: e.target.bio.value,
       isMentor: e.target.isMentor.value,
       youtube: e.target.youtube.value,
       linkedin: e.target.linkedin.value

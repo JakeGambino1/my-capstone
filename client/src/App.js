@@ -28,7 +28,6 @@ const App = () => (
             <Route exact path="/profile" component={Profile} />
           </Switch>
         </UserProvider>
-        <WrittenContentContainer />
       </section>
     </Fragment>
   </Router>

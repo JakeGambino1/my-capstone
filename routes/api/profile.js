@@ -27,7 +27,6 @@ router.get('/me', auth, async (req, res) => {
 router.post(
   '/',
   [
-    auth,
     check('interests', 'Interests are required')
       .not()
       .isEmpty()
@@ -41,7 +40,7 @@ router.post(
 
     // Build profile object
     const profileFields = {};
-    profileFields.user = req.user.id;
+    profileFields.user = user.id;
     if (isMentor) profileFields.isMentor = isMentor;
     if (youtube) profileFields.youtube = youtube;
     if (linkedin) profileFields.linkedin = linkedin;
