@@ -40,7 +40,6 @@ class ActionList extends Component {
   render() {
     return (
       <div>
-        <h4 className="center">Action List</h4>
         <AddActionListItem addActionListItem={this.addActionListItem} />
         <table>
           <thead>

@@ -20,6 +20,9 @@ const UserSchema = new mongoose.Schema({
   isMentor: {
     type: Boolean
   },
+  alternateTheme: {
+    type: Boolean
+  },
   date: {
     type: Date,
     default: Date.now

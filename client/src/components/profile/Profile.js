@@ -5,6 +5,7 @@ import ActionList from '../action-list/ActionList';
 
 const Profile = () => {
   const value = useContext(UserContext);
+  const theme = value.alternateTheme;
   const getStyle = {
     height: '500px',
     overflowY: 'scroll',
@@ -14,49 +15,98 @@ const Profile = () => {
   const overallStyle = {
     paddingTop: '50px'
   };
-  return (
-    <div style={overallStyle}>
-      <div className="row">
-        <div className="col m4">
-          <div className="valign-wrapper">
-            <div className="profile center">
-              <div className="profile-img">
-                <img
-                  className="circle responsive-img"
-                  src={`https:${value.avatar}`}
-                />
-              </div>
-              <div className="profile-name">{value.name}</div>
-              <div className="profile-interest">
-                <ul>
-                  Interests:
-                  {value.interests.map((interest, i) => {
-                    return <li key={i}>{interest}</li>;
-                  })}
-                </ul>
-              </div>
-              <div className="profile-social">
-                <div className="profile-social-youtube">
-                  YouTube: <a href={value.youtube}>{value.youtube}</a>
+
+  if (theme) {
+    return (
+      <div style={overallStyle}>
+        <div className="row">
+          <div className="col m4">
+            <div className="valign-wrapper">
+              <div className="profile center">
+                <div className="profile-img">
+                  <img
+                    className="circle responsive-img"
+                    src={`https:${value.avatar}`}
+                  />
                 </div>
-                <div className="profile-social-linkedin">
-                  LinkedIn: <a href={value.linkedin}>{value.linkedin}</a>
+                <div className="profile-name">{value.name}</div>
+                <div className="profile-interest">
+                  <ul>
+                    Interests:
+                    {value.interests.map((interest, i) => {
+                      return <li key={i}>{interest}</li>;
+                    })}
+                  </ul>
+                </div>
+                <div className="profile-social">
+                  <div className="profile-social-youtube">
+                    YouTube: <a href={value.youtube}>{value.youtube}</a>
+                  </div>
+                  <div className="profile-social-linkedin">
+                    LinkedIn: <a href={value.linkedin}>{value.linkedin}</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <h4 className="center">Action List</h4>
+          <div className="col m8" style={getStyle}>
+            <ActionList />
+          </div>
         </div>
-        <h4 className="center">Written Content</h4>
-        <div className="col m8" style={getStyle}>
+        <hr />
+        <div className="row">
+          <h4 className="center">Written Content</h4>
           <WrittenContentContainer />
         </div>
       </div>
-      <hr />
-      <div className="row">
-        <ActionList />
+    );
+  } else {
+    return (
+      <div style={overallStyle}>
+        <div className="row">
+          <div className="col m4">
+            <div className="valign-wrapper">
+              <div className="profile center">
+                <div className="profile-img">
+                  <img
+                    className="circle responsive-img"
+                    src={`https:${value.avatar}`}
+                  />
+                </div>
+                <div className="profile-name">{value.name}</div>
+                <div className="profile-interest">
+                  <ul>
+                    Interests:
+                    {value.interests.map((interest, i) => {
+                      return <li key={i}>{interest}</li>;
+                    })}
+                  </ul>
+                </div>
+                <div className="profile-social">
+                  <div className="profile-social-youtube">
+                    YouTube: <a href={value.youtube}>{value.youtube}</a>
+                  </div>
+                  <div className="profile-social-linkedin">
+                    LinkedIn: <a href={value.linkedin}>{value.linkedin}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h4 className="center">Written Content</h4>
+          <div className="col m8" style={getStyle}>
+            <WrittenContentContainer />
+          </div>
+        </div>
+        <hr />
+        <div className="row">
+          <h4 className="center">Action List</h4>
+          <ActionList />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Profile;

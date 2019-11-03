@@ -3,7 +3,6 @@ import DeleteActionListItem from './DeleteActionListItem';
 
 class ActionListItem extends Component {
   render() {
-    console.log(this.props.actionListItems);
     return this.props.actionListItems.map((actionItem, i) => (
       <tr>
         <td>

@@ -56,7 +56,8 @@ class Login extends Component {
             data.user.avatar,
             data.isMentor,
             data.social.youtube,
-            data.social.linkedin
+            data.social.linkedin,
+            data.alternateTheme
           );
         });
       });

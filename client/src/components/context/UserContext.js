@@ -11,10 +11,21 @@ export class UserProvider extends Component {
     avatar: '',
     isMentor: false,
     youtube: 'YouTube.com/URL',
-    linkedin: 'LinkedIn.com/URL'
+    linkedin: 'LinkedIn.com/URL',
+    alternateTheme: false
   };
 
-  updateState(id, name, interests, email, avatar, isMentor, youtube, linkedin) {
+  updateState(
+    id,
+    name,
+    interests,
+    email,
+    avatar,
+    isMentor,
+    youtube,
+    linkedin,
+    alternateTheme
+  ) {
     console.log(this);
     this.setState({
       id: id,
@@ -24,7 +35,8 @@ export class UserProvider extends Component {
       avatar: avatar,
       isMentor: isMentor,
       youtube: youtube,
-      linkedin: linkedin
+      linkedin: linkedin,
+      alternateTheme: alternateTheme
     });
     console.log(this.state);
   }
