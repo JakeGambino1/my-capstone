@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { UserContext } from '../context/UserContext';
 
 class CreatePost extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      user: '',
       title: '',
       content: ''
     };
@@ -16,6 +18,7 @@ class CreatePost extends Component {
     console.log(e.target.title.value);
     console.log(e.target.content.value);
     axios.post('api/written-content/', {
+      user: UserContext.id,
       title: e.target.title.value,
       content: e.target.content.value
     });

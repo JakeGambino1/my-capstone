@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import M from 'materialize-css';
 import axios from 'axios';
+import { UserContext } from '../context/UserContext';
+import jwt_decode from 'jwt-decode';
 
 class Login extends Component {
   constructor(props) {
@@ -29,12 +31,31 @@ class Login extends Component {
   };
 
   handleSubmit = e => {
+    console.log(UserContext.state);
     e.preventDefault();
-    axios.post('api/users/', {
-      email: this.state.email,
-      password: this.state.password
-    });
-    console.log(`${this.state.email} ${this.state.password}`);
+    axios
+      .post('api/auth/', {
+        email: this.state.email,
+        password: this.state.password
+      })
+      .then(res => {
+        const decoded = jwt_decode(res.data.token);
+        axios.get('api/profile/user/' + decoded.user.id).then(res => {
+          const data = res.data;
+          console.log(data);
+          UserContext.state = {
+            id: data.user._id,
+            name: data.user.name,
+            interests: [res.interests],
+            email: data.user.email,
+            avatar: data.user.avatar,
+            isMentor: data.isMentor,
+            youtube: data.social.youtube,
+            linkedin: data.social.linkedin
+          };
+          console.log(UserContext.state);
+        });
+      });
   };
 
   render() {

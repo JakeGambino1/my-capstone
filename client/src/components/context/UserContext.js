@@ -6,6 +6,7 @@ export class UserProvider extends Component {
   constructor() {
     super();
     this.state = {
+      id: '12345',
       name: 'Jake',
       interests: ['interest1', 'interest2', 'interest3'],
       email: 'Jake.Gambino1@gmail.com',
