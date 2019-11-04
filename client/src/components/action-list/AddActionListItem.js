@@ -36,7 +36,7 @@ class AddActionListItem extends Component {
           </div>
           <div className="col s3">
             <button className="btn" type="submit">
-              Add Action Item
+              Add Item
             </button>
           </div>
         </form>

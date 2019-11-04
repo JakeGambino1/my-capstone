@@ -67,15 +67,19 @@ const Profile = () => {
               </div>
             </div>
           </div>
-          <h4 className="center">Action List</h4>
-          <div className="col m8" style={getStyle}>
-            <ActionList />
+          <div className="main-feature">
+            <h4 className="center">Action List</h4>
+            <div className="col m8" style={getStyle}>
+              <ActionList />
+            </div>
           </div>
         </div>
         <hr />
         <div className="row">
-          <h4 className="center">Written Content</h4>
-          <WrittenContentContainer />
+          <div className="secondary-feature">
+            <h4 className="center">Written Content</h4>
+            <WrittenContentContainer />
+          </div>
         </div>
       </div>
     );
@@ -122,15 +126,19 @@ const Profile = () => {
               </div>
             </div>
           </div>
-          <h4 className="center">Written Content</h4>
-          <div className="col m8" style={getStyle}>
-            <WrittenContentContainer />
+          <div className="main-feature">
+            <h4 className="center">Written Content</h4>
+            <div className="col m8" style={getStyle}>
+              <WrittenContentContainer />
+            </div>
           </div>
         </div>
         <hr />
         <div className="row">
-          <h4 className="center">Action List</h4>
-          <ActionList />
+          <div className="secondary-feature">
+            <h4 className="center">Action List</h4>
+            <ActionList />
+          </div>
         </div>
       </div>
     );

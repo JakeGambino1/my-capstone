@@ -67,3 +67,60 @@ input[type='email'] {
   color: rgb(1, 0, 130);
   border: 1px solid rgb(1, 0, 130);
 }
+
+.profile {
+  position: relative;
+  left: -600px;
+  -webkit-animation: slideLeftToRight 0.5s forwards;
+  animation: slideLeftToRight 0.5s forwards;
+}
+
+@-webkit-keyframes slideLeftToRight {
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slideLeftToRight {
+  100% {
+    left: 0;
+  }
+}
+
+.main-feature {
+  position: relative;
+  right: -1000px;
+  -webkit-animation: slideRightToLeft 0.5s forwards;
+  animation: slideRightToLeft 0.5s forwards;
+}
+
+@-webkit-keyframes slideRightToLeft {
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes slideRightToLeft {
+  100% {
+    right: 0;
+  }
+}
+
+.secondary-feature {
+  position: relative;
+  bottom: -1000px;
+  -webkit-animation: slideBottomToTop 0.5s forwards;
+  animation: slideBottomToTop 0.5s forwards;
+}
+
+@-webkit-keyframes slideBottomToTop {
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes slideBottomToTop {
+  100% {
+    bottom: 0;
+  }
+}
