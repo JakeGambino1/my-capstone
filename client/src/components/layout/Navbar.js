@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className="navbar-fixed">
+    <nav className="navbar-fixed slide-from-top">
       <nav>
         <div className="container">
           <div className="nav-wrapper">

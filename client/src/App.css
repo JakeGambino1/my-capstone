@@ -33,10 +33,26 @@ nav {
   border-bottom: 3px solid white;
 }
 
+a {
+  color: white;
+}
+
+.profile a:hover {
+  padding: 5px;
+  color: rgb(1, 0, 130);
+  text-decoration: underline;
+}
+
 .btn {
   background-color: rgb(1, 0, 130);
   color: rgb(160, 190, 214);
   border: 1px solid white;
+}
+
+.btn:hover {
+  background-color: rgb(160, 190, 214);
+  color: rgb(1, 0, 130);
+  border: 1px solid rgb(1, 0, 130);
 }
 
 .landing-page {
@@ -62,12 +78,6 @@ input[type='email'] {
   color: rgb(1, 0, 130);
 }
 
-.btn:hover {
-  background-color: rgb(160, 190, 214);
-  color: rgb(1, 0, 130);
-  border: 1px solid rgb(1, 0, 130);
-}
-
 .profile {
   position: relative;
   left: -600px;
@@ -90,8 +100,8 @@ input[type='email'] {
 .main-feature {
   position: relative;
   right: -1000px;
-  -webkit-animation: slideRightToLeft 0.5s forwards;
-  animation: slideRightToLeft 0.5s forwards;
+  -webkit-animation: slideRightToLeft 1.5s forwards;
+  animation: slideRightToLeft 1.5s forwards;
 }
 
 @-webkit-keyframes slideRightToLeft {
@@ -109,8 +119,8 @@ input[type='email'] {
 .secondary-feature {
   position: relative;
   bottom: -1000px;
-  -webkit-animation: slideBottomToTop 0.5s forwards;
-  animation: slideBottomToTop 0.5s forwards;
+  -webkit-animation: slideBottomToTop 2.5s forwards;
+  animation: slideBottomToTop 2.5s forwards;
 }
 
 @-webkit-keyframes slideBottomToTop {
@@ -122,5 +132,24 @@ input[type='email'] {
 @keyframes slideBottomToTop {
   100% {
     bottom: 0;
+  }
+}
+
+.slide-from-top {
+  position: relative;
+  top: -1000px;
+  -webkit-animation: slideTopToBottm 0.5s forwards;
+  animation: slideTopToBottm 0.5s forwards;
+}
+
+@-webkit-keyframes slideTopToBottm {
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes slideTopToBottm {
+  100% {
+    top: 0;
   }
 }
