@@ -30,17 +30,29 @@ class ActionList extends Component {
   };
 
   addActionListItem = title => {
+    console.log(this.state.actionListItems);
     axios.post(`/api/action-list`, { title, isComplete: false }).then(res => {
       this.setState({
         actionListItems: [...this.state.actionListItems, res.data]
       });
     });
+    console.log(this.state.actionListItems);
+  };
+
+  markComplete = e => {
+    let completeStyle = {
+      textDecoration: 'line-through'
+    };
+    e.target.style = completeStyle;
+    console.log(e.target.style.textDecoration);
   };
 
   render() {
     return (
       <div>
-        <AddActionListItem addActionListItem={this.addActionListItem} />
+        <AddActionListItem
+          addActionListItem={this.addActionListItem.bind(this)}
+        />
         <table>
           <thead>
             <tr>
@@ -53,8 +65,8 @@ class ActionList extends Component {
           <tbody>
             <ActionListItem
               actionListItems={this.state.actionListItems}
-              markComplete={this.markComplete}
-              deleteActionListItem={this.deleteActionListItem}
+              markComplete={this.markComplete.bind(this)}
+              deleteActionListItem={this.deleteActionListItem.bind(this)}
             />
           </tbody>
         </table>

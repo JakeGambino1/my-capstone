@@ -5,15 +5,29 @@ import ActionList from '../action-list/ActionList';
 
 const Profile = () => {
   const value = useContext(UserContext);
-  const theme = value.alternateTheme;
+
+  let theme = value.alternateTheme;
+
   const getStyle = {
     height: '500px',
     overflowY: 'scroll',
     boxShadow: 'inset 0 0 10px black',
     padding: '20px'
   };
+
   const overallStyle = {
     paddingTop: '50px'
+  };
+
+  const changeTheme = () => {
+    console.log(value);
+    console.log(value.alternateTheme);
+    console.log(theme);
+    theme = !theme;
+    console.log(theme);
+    value.alternateTheme = theme;
+    console.log(value.alternateTheme);
+    console.log(value);
   };
 
   if (theme) {
@@ -27,14 +41,19 @@ const Profile = () => {
                   <img
                     className="circle responsive-img"
                     src={`https:${value.avatar}`}
+                    alt={`${value.name}`}
                   />
                 </div>
-                <div className="profile-name">{value.name}</div>
+                <h4 className="profile-name">{value.name}</h4>
                 <div className="profile-interest">
                   <ul>
-                    Interests:
+                    <h4>Interests:</h4>
                     {value.interests.map((interest, i) => {
-                      return <li key={i}>{interest}</li>;
+                      return (
+                        <li key={i}>
+                          <h5>{interest}</h5>
+                        </li>
+                      );
                     })}
                   </ul>
                 </div>
@@ -45,6 +64,11 @@ const Profile = () => {
                   <div className="profile-social-linkedin">
                     LinkedIn: <a href={value.linkedin}>{value.linkedin}</a>
                   </div>
+                </div>
+                <div className="row">
+                  <button className="btn center" onClick={changeTheme}>
+                    Change Layout
+                  </button>
                 </div>
               </div>
             </div>
@@ -72,14 +96,19 @@ const Profile = () => {
                   <img
                     className="circle responsive-img"
                     src={`https:${value.avatar}`}
+                    alt={`${value.name}`}
                   />
                 </div>
-                <div className="profile-name">{value.name}</div>
+                <h4 className="profile-name">{value.name}</h4>
                 <div className="profile-interest">
                   <ul>
-                    Interests:
+                    <h4>Interests:</h4>
                     {value.interests.map((interest, i) => {
-                      return <li key={i}>{interest}</li>;
+                      return (
+                        <li key={i}>
+                          <h5>{interest}</h5>
+                        </li>
+                      );
                     })}
                   </ul>
                 </div>
@@ -90,6 +119,11 @@ const Profile = () => {
                   <div className="profile-social-linkedin">
                     LinkedIn: <a href={value.linkedin}>{value.linkedin}</a>
                   </div>
+                </div>
+                <div className="row">
+                  <button className="btn center" onClick={changeTheme}>
+                    Change Layout
+                  </button>
                 </div>
               </div>
             </div>

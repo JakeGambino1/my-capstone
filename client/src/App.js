@@ -5,7 +5,6 @@ import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
-import WrittenContentContainer from './components/written-content/WrittenContentContainer';
 import CreateWrittenContent from './components/written-content/CreateWrittenContent';
 import ActionList from './components/action-list/ActionList';
 import CreateProfile from './components/profile/CreateProfile';

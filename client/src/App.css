@@ -6,17 +6,36 @@
   height: 40vmin;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.App-link {
+  color: #09d3ac;
+}
+
+body {
+  background-color: rgb(160, 190, 214);
+}
+
+nav {
+  background-color: rgb(1, 0, 130);
+  color: rgb(160, 190, 214);
+  border-bottom: 3px solid white;
+}
+
+.btn {
+  background-color: rgb(1, 0, 130);
+  color: rgb(160, 190, 214);
+  border: 1px solid white;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'] {
+  color: rgb(1, 0, 130);
+}
+
+.input-field label {
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+.input-field .active {
+  color: rgb(1, 0, 130);
 }
