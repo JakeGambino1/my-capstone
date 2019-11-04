@@ -9,9 +9,22 @@
 .App-link {
   color: #09d3ac;
 }
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   background-color: rgb(160, 190, 214);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 nav {
@@ -24,6 +37,15 @@ nav {
   background-color: rgb(1, 0, 130);
   color: rgb(160, 190, 214);
   border: 1px solid white;
+}
+
+.landing-page {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  height: 100%;
 }
 
 input[type='text'],

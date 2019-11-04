@@ -20,14 +20,8 @@ const Profile = () => {
   };
 
   const changeTheme = () => {
-    console.log(value);
-    console.log(value.alternateTheme);
-    console.log(theme);
     theme = !theme;
-    console.log(theme);
     value.alternateTheme = theme;
-    console.log(value.alternateTheme);
-    console.log(value);
   };
 
   if (theme) {

@@ -1,30 +1,29 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 class Landing extends Component {
   render() {
-    const cardBackground = {
-      backgroundImage: "url('../../img/snow.jpg')"
+    const landingStyle = {
+      backgroundImage:
+        "url('https://www.nps.gov/ever/planyourvisit/images/5204457439_c8dd299265_o.jpg?maxwidth=1200&maxheight=1200&autorotate=false')",
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover'
     };
 
     return (
-      <section className="row">
-        <div className="col s12 m12">
-          <div className="card blue-grey darken-1" style={cardBackground}>
-            <div className="card-content white-text">
-              <span className="card-title">
-                Thanks for checking out our SES from Marketing Boon LLC
-              </span>
-              <p>
-                This is our software solution to help create relationships
-                between your workforce, increasing engagement, productivity, and
-                the value people bring.
-              </p>
-            </div>
-            <div className="card-action">
-              <Link to="#">This is a link</Link>
-              <Link to="#">This is a link</Link>
-            </div>
+      <section className="landing-page" style={landingStyle}>
+        <div className="row container">
+          <div className="col s4 center white-text valign-wrapper">
+            <i className="large material-icons">assignment</i>
+            <h4>Create your own action list</h4>
+          </div>
+          <div className="col s4 center white-text valign-wrapper">
+            <i className="large material-icons">featured_play_list</i>
+            <h4>View Featured Content</h4>
+          </div>
+          <div className="col s4 center white-text valign-wrapper">
+            <i className="large material-icons">group</i>
+            <h4>Connect with mentors</h4>
           </div>
         </div>
       </section>
